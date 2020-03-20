@@ -29,7 +29,6 @@ class JFormFieldOsmap extends JFormFieldText
             'zoom'      =>  $this->element['zoom'],
         ];
 
-        var_dump($options);
 
         $document->addScriptOptions('options', $options);
 
@@ -37,7 +36,6 @@ class JFormFieldOsmap extends JFormFieldText
         $field .=   '    <input type="hidden" data-map-markers="" value="" name="map-geojson-data" />';
         $field .=   '</div>';
         $field .=   '<input type="text" name="' .  $this->name . '" id="' . $this->id . '" value="' . $this->value. '" />';
-
 
         return $field;
     }

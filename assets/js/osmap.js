@@ -1,5 +1,12 @@
 jQuery(function() {
 
+    const options = Joomla.getOptions('options');
+
+    let latitudeMap = options.latitude[0]
+    let longitudeMap = options.longitude[0];
+    let zoom = options.zoom[0];
+    let id= options.id;
+
 // Open Street Maps einbinden
     var osmUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
         osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -9,14 +16,25 @@ jQuery(function() {
         });
 
 
+
 // Startwert für die Map festlegen Lat/Lng und Zoom
-    var map = L.map('map').setView([51.4471101,6.6405211], 8).addLayer(osm);
+    var map = L.map('map').setView([latitudeMap,longitudeMap], zoom).addLayer(osm);
+
+
+    if(jQuery('#' + id).val() != ''){
+
+        var value = jQuery('#' + id).val().split(',');
+        console.log(value[0])
+        var marker = L.marker([value[0],value[1]]).addTo(map);
+    }
+    else{
+        var marker;
+    }
+
     setInterval(function (){
         map.invalidateSize();
     }, 100);
     map.on('click', onMapClick);
-
-    var marker;
 
 // Marker bei Klick löschen falls vorhanden und neuen hinzufügen
 
@@ -70,7 +88,10 @@ jQuery(function() {
         var markerObject = jQuery.parseJSON(allMarkersGeoJsonArray);
         var longitude = markerObject.geometry.coordinates[0];
         var latitude = markerObject.geometry.coordinates[1]
+        var valueField = latitude + ',' + longitude;
 
-        console.log(latitude,longitude);
+        jQuery('#' + id).val(valueField);
+
+
 
     }});
