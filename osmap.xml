@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="plugin" version="3.7.0" group="fields" method="upgrade">
+	<name>plg_fields_osmap</name>
+	<author>Whykiki</author>
+	<creationDate>March 2020</creationDate>
+	<copyright>Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>1.0.0</version>
+	<description>Open Street Maps</description>
+	<files>
+		<filename plugin="osmap">osmap.php</filename>
+		<folder>params</folder>
+		<folder>tmpl</folder>
+		<folder>field</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="latitude" type="text" default="Some text" label="Latitude" description="Latitude für die Standardkarte" size="10" />
+				<field name="longitude" type="text" default="Some text" label="Longitude" description="Longitude für die Standardkarte" size="10" />
+				<field name="zoom" type="text" default="Some text" label="Zoom" description="" size="10" filter="INT" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

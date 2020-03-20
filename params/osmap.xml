@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="latitude" type="text" default="Some text" label="Latitude" description="Latitude für die Standardkarte" size="10" />
+			<field name="longitude" type="text" default="Some text" label="Longitude" description="Longitude für die Standardkarte" size="10" />
+			<field name="zoom" type="text" default="Some text" label="Zoom" description="" size="10" filter="INT" />
+		</fieldset>
+	</fields>
+</form>
