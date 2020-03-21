@@ -5,7 +5,7 @@ jQuery(function() {
     let latitudeMap = options.latitude[0]
     let longitudeMap = options.longitude[0];
     let zoom = options.zoom[0];
-    let id= options.id;
+    let id = options.id;
 
 // Open Street Maps einbinden
     var osmUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
@@ -24,7 +24,6 @@ jQuery(function() {
     if(jQuery('#' + id).val() != ''){
 
         var value = jQuery('#' + id).val().split(',');
-        console.log(value[0])
         var marker = L.marker([value[0],value[1]]).addTo(map);
     }
     else{
