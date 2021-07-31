@@ -13,7 +13,7 @@
 		<filename plugin="osmap">osmap.php</filename>
 		<folder>params</folder>
 		<folder>tmpl</folder>
-		<folder>field</folder>
+		<folder>fields</folder>
 	</files>
 
 	<config>
