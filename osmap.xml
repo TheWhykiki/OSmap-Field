@@ -14,6 +14,7 @@
 		<folder>params</folder>
 		<folder>tmpl</folder>
 		<folder>fields</folder>
+		<folder>assets</folder>
 	</files>
 
 	<config>
